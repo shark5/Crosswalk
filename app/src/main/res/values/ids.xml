@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="Preview_not_available" type="string" />
+    <item name="mxGray" type="color" />
+    <item name="files_unknown_big" type="drawable" />
+    <item name="play_button" type="drawable" />
+    <item name="cache_bitmap_key" type="id" />
+    <item name="cache_bitmap_dirty_key" type="id" />
+    <item name="action_bar_height" type="dimen"/>
+</resources>
