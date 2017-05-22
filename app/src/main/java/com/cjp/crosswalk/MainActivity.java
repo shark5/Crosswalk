@@ -411,7 +411,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void startRecord() {
         Log.e("0525", "startRecord");
         try {
-            mMuxer = new MediaMuxer(mVideoPath + System.currentTimeMillis() + ".mp4", MediaMuxer.OutputFormat.MUXER_OUTPUT_MPEG_4);
+            File fileFolder = new File(mVideoPath);
+            if (!fileFolder.exists())
+                fileFolder.mkdirs();
+            String fileName = System.currentTimeMillis() + ".mp4";
+            File file = new File(mVideoPath, fileName);
+            if (!file.exists()) {
+                Log.d(TAG, "file create success ");
+                file.createNewFile();
+            }
+            mMuxer = new MediaMuxer(mVideoPath + fileName, MediaMuxer.OutputFormat.MUXER_OUTPUT_MPEG_4);
             recordVirtualDisplay();
         } catch (IOException e) {
             e.printStackTrace();
